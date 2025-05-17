@@ -26,17 +26,22 @@ export default function MyBalance() {
 
   const balance = data ? formatEther(BigInt(String(data)))  : '0';
 
-  return (
-    <div>
+   return (
+    <Card>
       
-        
-          {isLoading && <Skeleton className="w-[120px] h-[20px] rounded-full" />}
-          {!isLoading && balance && (
-            <p>My Account Balance: {balance} ETH</p>
-          )}
-          {isError && <p className="text-red-500">Error fetching balance</p>}
-        
-      
-    </div>
+      <CardContent>
+        {isLoading && (
+          <Skeleton className="w-[140px] h-[24px] rounded-full" />
+        )}
+        {!isLoading && balance && (
+          <p className="text-sm font-mono text-gray-800">
+            My balance: {balance} ETH
+          </p>
+        )}
+        {isError && (
+          <p className="text-red-500">Error fetching balance</p>
+        )}
+      </CardContent>
+    </Card>
   );
 }
