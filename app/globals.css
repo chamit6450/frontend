@@ -44,7 +44,7 @@
 }
 
 body {
-  font-family: --font-geist-mono
+  font-family: var(--font-geist-mono)
 }
 
 :root {

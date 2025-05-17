@@ -31,5 +31,6 @@ export default function RootLayout({
         <WagmiWrapper>{children}</WagmiWrapper>
       </body>
     </html>
+    
   );
 }

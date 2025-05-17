@@ -3,12 +3,16 @@ import MyBalance from "./Mybalance";
 import Withdrawassets from "./Withdraw";
 // import { UseTransactionHistory } from "./useTransactionHistory";
 export default function Deposit(){
-    return( 
+    return (
         <>
-        <MyBalance/>
-         <DepositAssets/>
-         <Withdrawassets/>
-         {/* <UseTransactionHistory/> */}
-        </> 
-    );
+  <div className="m-8">
+      <MyBalance />
+      </div>
+    <div className="flex flex-col md:flex-row gap-6 justify-center start p-6 w-full">
+      <DepositAssets />
+      <Withdrawassets />
+    </div>
+  </>
+);
+
 }
