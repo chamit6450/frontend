@@ -1,8 +1,30 @@
-export default function Withdrawassets(){
-    return(
-    <>
-     <input placeholder="Enter value"/><br></br>
-     <button>Withdraw</button><br></br>
-    </>
+'use client'
+import { useWriteContract } from "wagmi";
+import { parseEther } from 'viem';
+import ABI from './ABI';
+import { useState } from "react";
+
+export default function WithdrawAssets(){
+
+   const {data: hash, writeContract} = useWriteContract(); 
+   const [amt,setAmt]  = useState('');
+    const ethValue = parseEther(amt);
+   async function submit(e: React.FormEvent<HTMLFormElement>){
+     e.preventDefault();
+      writeContract({
+        address:'0x1b70295f44e77a0a903ef60fd70608a028217a9c',
+        abi:ABI,
+        functionName: 'withdrawAssets',
+        args: [ethValue]
+      })
+   }
+    return( 
+        <>
+        <form onSubmit={submit} >
+         <input placeholder="Enter value" onChange={(e)=>setAmt(e.target.value)}/><br></br>
+         <button>Withdraw</button><br></br>
+         {hash}
+         </form>
+        </> 
     );
 }
