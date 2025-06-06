@@ -16,6 +16,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label"
+import MyBalance from "./Mybalance";
 
 
 export default function WithdrawAssets(){
@@ -38,7 +39,15 @@ export default function WithdrawAssets(){
            <Card className=" bg-white/80 backdrop-blur-sm border border-blue-100 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer group">
                  
            <CardHeader>
-             <CardTitle><Label className="text-lg"><Coins className="w-6 h-6 text-blue-600" />Withdraw</Label></CardTitle>
+             <CardTitle>
+              <div className="flex">
+              <Label className="text-lg">
+                <Coins className="w-6 h-6 text-blue-600" />
+                Withdraw
+                </Label>
+              <div className="absolute right-8"><MyBalance/></div>
+              </div>
+              </CardTitle>
              <CardDescription>Withdraw your assets by submitting Specter tokens</CardDescription>
            </CardHeader>
            

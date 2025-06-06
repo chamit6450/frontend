@@ -27,9 +27,7 @@ export default function MyBalance() {
   const balance = data ? formatEther(BigInt(String(data)))  : '0';
 
    return (
-    <Card>
-      
-      <CardContent>
+    <div>
         {isLoading && (
           <Skeleton className="w-[140px] h-[24px] rounded-full" />
         )}
@@ -41,7 +39,6 @@ export default function MyBalance() {
         {isError && (
           <p className="text-red-500">Error fetching balance</p>
         )}
-      </CardContent>
-    </Card>
+     </div>
   );
 }

@@ -14,7 +14,8 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label"
+import { Label } from "@/components/ui/label";
+import MyBalance from "./Mybalance";
 
 
 export default function DepositAssets(){
@@ -37,7 +38,15 @@ export default function DepositAssets(){
    <Card className="bg-white/80 backdrop-blur-sm border border-blue-100 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer group">
                  
   <CardHeader>
-    <CardTitle><Label className="text-lg"><Wallet className="w-6 h-6 text-blue-600" />Deposit</Label></CardTitle>
+    <CardTitle>
+     <div className="flex">
+      <Label className="text-lg">
+         <Wallet className="w-6 h-6 text-blue-600" />
+            Deposit
+          </Label>
+          <div className="absolute right-8"><MyBalance/></div>
+      </div>
+      </CardTitle>
     <CardDescription>One step closer to decentralization. Deposit ETH today.</CardDescription>
   </CardHeader>
   
@@ -45,14 +54,15 @@ export default function DepositAssets(){
         <form onSubmit={submit} >
          <Input placeholder="Enter value" onChange={(e)=>setAmt(e.target.value)}/><br></br>
          <Button className="cursor-pointer" variant="outline" type="submit">Deposit</Button>
-        {hash}
         </form>
+        {hash && <div className="text-sm">Transaction hash:<br></br>{hash}</div>}
         
   </CardContent>
      <CardFooter className="text-sm text-muted-foreground leading-relaxed mb-6 max-w-2xl">
       Deposit your ETH safely and instantly receive tokens that represent your deposited assets on the blockchain.
       </CardFooter>
 </Card>
+
 
 </div>
 

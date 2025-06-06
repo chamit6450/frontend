@@ -22,7 +22,7 @@ export default function Homepage() {
   };
 
   return (
-    <main className="min-h-screen bg-zinc-100 text-gray-900 p-6 lg:p-20 font-[family-name:var(--font-geist-mono)]">
+    <main className="min-h-screen bg-zinc-100 text-stone-100 p-6 lg:p-20 font-[family-name:var(--font-geist-mono)]">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -81,7 +81,7 @@ export default function Homepage() {
                 animate="visible"
               >
                 <Link href={card.href}>
-                  <Card className="h-52 bg-white/80 backdrop-blur-sm border border-blue-100 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer group">
+                  <Card className="h-52 bg-zinc-200 border border-blue-200 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer group">
                     <CardHeader className="flex flex-row items-center justify-between">
                       <div>
                         <CardTitle className="text-xl font-semibold text-blue-900 group-hover:text-blue-700 transition-colors">

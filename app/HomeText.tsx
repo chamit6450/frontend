@@ -23,9 +23,9 @@ export default function BlockchainCard() {
   }, []);
 
   return (
-    <div className="w-full max-w-4xl mx-auto relative">
+    <div className="w-full max-w-4xl mx-auto relative ">
       {/* Blockchain Blocks */}
-      <div className="absolute top-0 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
+      <div className="absolute top-0 left-1/2  transform -translate-x-1/2 flex space-x-2 z-10">
         {blocks.map((block) => (
           <motion.div
             key={block.id}
@@ -55,7 +55,7 @@ export default function BlockchainCard() {
         transition={{ duration: 1, ease: 'easeOut', delay: 1.2 }} 
         className="relative z-20 mt-16"
       >
-        <Card className="shadow-md border-gray-200">
+        <Card className="bg-gradient-to-br from-zinc-300 to-zinc-200">
           <CardHeader>
             <CardTitle className="text-3xl md:text-4xl text-center">
               Welcome to the Future of <span className="text-blue-600">Decentralized Banking</span>
